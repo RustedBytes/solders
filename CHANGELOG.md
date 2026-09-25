@@ -8,6 +8,7 @@
 
 ### Fixed
 
+- `GetBlockResp.from_json` now treats a missing `data` field on compiled instructions as an empty string. Some RPC providers omit the field when the instruction data is empty, which previously caused the entire block response to fail deserialization.
 - `sendTransaction` / `simulateTransaction` request builders always advertise `encoding: "base64"` on the wire. The payload is serialized as base64 even when `config` is omitted, but JSON-RPC then defaults to base58 and the node rejects the request (`invalid base58 encoding`).
 
 ### Changed
