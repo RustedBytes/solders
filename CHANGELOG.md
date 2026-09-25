@@ -1,6 +1,10 @@
 # Changelog
 
-# Unreleased
+# [0.30.0] - 2026-09-25
+
+### Added
+
+- Free-threaded CPython 3.14 support, including `cp314t` wheels for every existing release platform. The extension explicitly declares that it does not require the GIL, and CI verifies imports with the GIL disabled plus concurrent signing and hashing operations.
 
 ### Fixed
 
